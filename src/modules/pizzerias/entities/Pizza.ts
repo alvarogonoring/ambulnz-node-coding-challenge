@@ -13,7 +13,7 @@ export class Pizza {
     price: number;
 
     @Column({type: 'varchar'})
-    ingredients: string[]
+    ingredients: string | string[]
 
     @CreateDateColumn({type: 'timestamp'})
     created_at: Date
