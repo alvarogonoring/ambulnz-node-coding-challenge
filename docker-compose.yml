@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  mysql:
+    image: 'bitnami/mysql:8.3'
+    container_name: ambulnz_pizzas
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: ambulnz_pizzas
+      MYSQL_DATABASE: ambulnz_pizzas
+      MYSQL_ROOT_USER: docker
+      MYSQL_PASSWORD: ambulnz_pizzas
+    volumes:
+      - ambulnz_pizzas_mysql_data:/bitnami/mysql/data
+
+volumes:
+  ambulnz_pizzas_mysql_data:
