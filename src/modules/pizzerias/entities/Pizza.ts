@@ -16,7 +16,7 @@ export class Pizza {
     ingredients: string[]
 
     @CreateDateColumn({type: 'timestamp'})
-    create_at: Date
+    created_at: Date
 
     constructor() {
         if (!this.id) this.id = v4();
