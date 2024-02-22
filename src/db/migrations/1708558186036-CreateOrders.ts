@@ -23,6 +23,11 @@ export class CreateOrders1708558186036 implements MigrationInterface {
                     {
                         name: 'pizzas',
                         type: 'json'
+                    },
+                    {
+                        name: 'created_at',
+                        type: 'timestamp',
+                        default: 'now()'
                     }
                 ]
             })

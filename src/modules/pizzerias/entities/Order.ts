@@ -1,4 +1,4 @@
-import {Column, Entity, Generated, PrimaryColumn} from "typeorm";
+import {Column, CreateDateColumn, Entity, Generated, PrimaryColumn} from "typeorm";
 import {IPizzaOrder} from "@/interfaces/IPizzaOrder";
 import {v4} from "uuid";
 
@@ -13,6 +13,9 @@ export class Order {
 
     @Column({type: 'json'})
     pizzas: IPizzaOrder[];
+
+    @CreateDateColumn({type: 'timestamp'})
+    created_at: Date;
 
     constructor() {
         if (!this.id) this.id = v4();
