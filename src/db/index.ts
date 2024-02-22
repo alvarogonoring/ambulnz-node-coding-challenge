@@ -1,5 +1,6 @@
 import {DataSource} from "typeorm";
 import {Pizza} from "@/modules/pizzerias/entities/Pizza";
+import {Order} from "@/modules/pizzerias/entities/Order";
 
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -8,7 +9,7 @@ export const AppDataSource = new DataSource({
     username: "docker",
     password: "ambulnz_pizzas",
     database: "ambulnz_pizzas",
-    entities: [Pizza],
+    entities: [Pizza, Order],
     migrations: ["./src/db/migrations/*.ts"]
 })
 

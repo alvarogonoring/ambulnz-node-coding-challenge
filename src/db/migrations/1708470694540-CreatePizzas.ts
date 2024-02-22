@@ -10,6 +10,7 @@ export class CreatePizzas1708470694540 implements MigrationInterface {
                     {
                         name: 'id',
                         type: 'varchar',
+                        length: '36',
                         isPrimary: true
                     },
                     {
@@ -18,7 +19,7 @@ export class CreatePizzas1708470694540 implements MigrationInterface {
                     },
                     {
                         name: 'price',
-                        type: 'decimal'
+                        type: 'int'
                     },
                     {
                         name: 'ingredients',
