@@ -1,6 +1,7 @@
 import {Column, CreateDateColumn, Entity, Generated, PrimaryColumn} from "typeorm";
 import {IPizzaOrder} from "@/interfaces/IPizzaOrder";
 import {v4} from "uuid";
+import {Pizza} from "@/modules/pizzerias/entities/Pizza";
 
 @Entity('orders')
 export class Order {

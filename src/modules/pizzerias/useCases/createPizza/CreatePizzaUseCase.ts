@@ -1,5 +1,6 @@
 import {inject, injectable} from "tsyringe";
 import {IPizzasRepository} from "@/interfaces/IPizzasRepository";
+import {AppError} from "@/errors/AppError";
 
 interface Request {
     name: string;
@@ -18,7 +19,7 @@ export class CreatePizzaUseCase {
         const pizzaAlreadyExists = await this.pizzasRepository.findByName(name);
 
         if (pizzaAlreadyExists) {
-            throw new Error('Pizza already exists!');
+            throw new AppError('Pizza already exists!');
         }
 
         await this.pizzasRepository.create({

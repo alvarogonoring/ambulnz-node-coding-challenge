@@ -13,10 +13,10 @@ export class Pizza {
     price: number;
 
     @Column({type: 'varchar'})
-    ingredients: string | string[]
+    ingredients: string;
 
     @CreateDateColumn({type: 'timestamp'})
-    created_at: Date
+    created_at: Date;
 
     constructor() {
         if (!this.id) this.id = v4();

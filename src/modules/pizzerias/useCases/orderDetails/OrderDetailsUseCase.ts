@@ -1,6 +1,5 @@
 import {inject, injectable} from "tsyringe";
 import {IOrdersRepository} from "@/interfaces/IOrdersRepository";
-import {IPizzasRepository} from "@/interfaces/IPizzasRepository";
 
 @injectable()
 export class OrderDetailsUseCase {
