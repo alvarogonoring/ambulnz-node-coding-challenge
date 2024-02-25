@@ -29,26 +29,20 @@ export class OrdersRepository implements IOrdersRepository {
 
     async findById(id: string): Promise<Order> {
         const order = await this.repository
-            .createQueryBuilder('order')
-            .select([
-                'id',
-                'order_number',
-                'created_at',
-                'JSON_ARRAYAGG(JSON_OBJECT("pizzaId", json_extract(order.pizzas, "$[*].pizzaId"), "quantity", json_extract(order.pizzas, "$[*].quantity")) ) as pizzas',
-            ])
-            .where('order.id = :id', { id })
-            .getRawOne();
+            .findOne({
+                where: {
+                    id
+                }
+            })
 
         if (!order) {
             throw new AppError('Order not found!')
         }
 
-        const pizzaIds = order.pizzas[0].pizzaId.map((pizza: any) => pizza);
-
         const pizzas: Pizza[] = await this.pizzasRepository
             .find({
                 where: {
-                    id: In(pizzaIds)
+                    id: In(order.pizzas.map(pizza => pizza.pizzaId))
                 }
             })
 
@@ -58,6 +52,7 @@ export class OrdersRepository implements IOrdersRepository {
             created_at: order.created_at,
             pizzas: pizzas.map(pizza => ({
                 ...pizza,
+                quantity: order.pizzas.find(pizzaOrder => pizzaOrder.pizzaId === pizza.id).quantity,
                 ingredients: pizza.ingredients.split(',')
             })) as IPizzaOrder[]
         };
