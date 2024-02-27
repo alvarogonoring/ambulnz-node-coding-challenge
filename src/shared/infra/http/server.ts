@@ -1,10 +1,10 @@
 import 'reflect-metadata';
 import express from 'express';
 import 'express-async-errors';
-import './db';
-import './shared/container';
-import {router} from "@/routes";
-import {handleErrors} from "@/middlewares/handleErrors";
+import '../typeorm';
+import '../../container';
+import {router} from "shared/infra/http/routes";
+import {handleErrors} from "@/shared/infra/http/middlewares/handleErrors";
 
 const port = 8080;
 

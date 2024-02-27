@@ -1,4 +1,4 @@
-import {Pizza} from "@/modules/pizzerias/entities/Pizza";
+import {Pizza} from "@/modules/pizzerias/infra/entities/Pizza";
 import {CreatePizzaDto} from "@/interfaces/dto/CreatePizza.dto";
 
 export interface IPizzasRepository {

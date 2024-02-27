@@ -1,4 +1,4 @@
-import {Order} from "@/modules/pizzerias/entities/Order";
+import {Order} from "@/modules/pizzerias/infra/entities/Order";
 import {inject, injectable} from "tsyringe";
 import {IOrdersRepository} from "@/interfaces/IOrdersRepository";
 

@@ -1,10 +1,10 @@
 import {In, Repository} from "typeorm";
-import {AppDataSource} from "@/db";
+import {AppDataSource} from "shared/infra/typeorm";
 import {IOrdersRepository} from "@/interfaces/IOrdersRepository";
-import {Order} from "@/modules/pizzerias/entities/Order";
+import {Order} from "@/modules/pizzerias/infra/entities/Order";
 import {IPizzaOrder} from "@/interfaces/IPizzaOrder";
-import {Pizza} from "@/modules/pizzerias/entities/Pizza";
-import {AppError} from "@/errors/AppError";
+import {Pizza} from "@/modules/pizzerias/infra/entities/Pizza";
+import {AppError} from "@/shared/errors/AppError";
 
 export class OrdersRepository implements IOrdersRepository {
     private repository: Repository<Order>;

@@ -1,6 +1,6 @@
 import {inject, injectable} from "tsyringe";
 import {IPizzasRepository} from "@/interfaces/IPizzasRepository";
-import {Pizza} from "@/modules/pizzerias/entities/Pizza";
+import {Pizza} from "@/modules/pizzerias/infra/entities/Pizza";
 
 @injectable()
 export class ListPizzasUseCase {

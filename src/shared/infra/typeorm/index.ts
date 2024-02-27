@@ -1,6 +1,6 @@
 import {DataSource} from "typeorm";
-import {Pizza} from "@/modules/pizzerias/entities/Pizza";
-import {Order} from "@/modules/pizzerias/entities/Order";
+import {Pizza} from "@/modules/pizzerias/infra/entities/Pizza";
+import {Order} from "@/modules/pizzerias/infra/entities/Order";
 
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -10,7 +10,7 @@ export const AppDataSource = new DataSource({
     password: "ambulnz_pizzas",
     database: "ambulnz_pizzas",
     entities: [Pizza, Order],
-    migrations: ["./src/db/migrations/*.ts"]
+    migrations: ["./src/typeorm/migrations/*.ts"]
 })
 
 AppDataSource.initialize()

@@ -1,7 +1,7 @@
 import {IPizzasRepository} from "@/interfaces/IPizzasRepository";
 import {Repository} from "typeorm";
-import {Pizza} from "@/modules/pizzerias/entities/Pizza";
-import {AppDataSource} from "@/db";
+import {Pizza} from "@/modules/pizzerias/infra/entities/Pizza";
+import {AppDataSource} from "shared/infra/typeorm";
 import {CreatePizzaDto} from "@/interfaces/dto/CreatePizza.dto";
 
 export class PizzasRepository implements IPizzasRepository{

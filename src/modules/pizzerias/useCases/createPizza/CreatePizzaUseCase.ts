@@ -1,6 +1,6 @@
 import {inject, injectable} from "tsyringe";
 import {IPizzasRepository} from "@/interfaces/IPizzasRepository";
-import {AppError} from "@/errors/AppError";
+import {AppError} from "@/shared/errors/AppError";
 
 interface Request {
     name: string;

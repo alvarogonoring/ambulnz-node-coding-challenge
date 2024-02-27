@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
 import {container} from "tsyringe";
 import {OrderDetailsUseCase} from "@/modules/pizzerias/useCases/orderDetails/OrderDetailsUseCase";
-import {AppError} from "@/errors/AppError";
+import {AppError} from "@/shared/errors/AppError";
 
 export class OrderDetailsController {
     async handle(req: Request, res: Response): Promise<Response> {
