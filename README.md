@@ -1,7 +1,7 @@
 # Ambulnz Node Coding Challenge
 Backend Node solution for Ambulnz's coding challenge
 
-The original challenge guide can be found here: https://github.com/AmbulnzLLC/fullstack-challenge/tree/master
+The original challenge guide can be found here: [https://github.com/AmbulnzLLC/fullstack-challenge/tree/master](https://github.com/AmbulnzLLC/fullstack-challenge/tree/master/backend)
 
 ## List of additional used libraries:
 - Express
