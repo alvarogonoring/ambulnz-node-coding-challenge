@@ -50,22 +50,26 @@ To fetch any api call, just apoint the url for http://localhost:8080
 
 ### POST /pizzas
 
-Payload:
+Request Body:
+```bash
 {
   name: string;
   price: number;
   ingredients: string[];
 }
+```
 
 ### GET /pizzas
 
 ### POST /orders
 
-Payload:
+Request body:
+```bash
 {
   pizzaId: string;
   quantity: number;
 }
+```
 
 ### GET /orders
 
